@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class NilaiKelompok23 {
     public static void main(String[] args) {
-        int nilai, j;
-        float totalNilai, rataNilai;
+        int nilai, j, kelompokTertinggi=0;
+        float totalNilai, rataNilai, rataTertinggi=0;
         Scanner sc = new Scanner(System.in);
         int i = 1;
         while (i<=6) {
@@ -17,7 +17,12 @@ public class NilaiKelompok23 {
 
             rataNilai=totalNilai/5;
             System.out.println("Kelompok " + i + ": nilai rata-rata = " + rataNilai);
+            if(rataNilai > rataTertinggi) {
+                rataTertinggi = rataNilai;
+                kelompokTertinggi = i;
+            }
             i++;
         }
+        System.out.println("Kelompok rata rata tertinggi adalah kelompok " + kelompokTertinggi + " dengan rata rata " + rataTertinggi);
     }
 }
